@@ -3,11 +3,18 @@ package org.lecture;
 import java.util.List;
 import java.util.Scanner;
 
-public class StackSortDriver {
-    private Scanner sc = new Scanner(System.in);
-    private List<Integer> numbers;
-    private MyStack stack = new MyStackImpl();
 
+/**
+ * Class for starting the user menu and performing the stack sort
+ */
+public class StackSort {
+    private final Scanner sc = new Scanner(System.in);
+    private List<Integer> numbers;
+    private final MyStack stack = new MyStackImpl();
+
+    /**
+     * Start user menu
+     */
     public void startMenu() {
         boolean isContinue = true;
         String menu = """
@@ -53,9 +60,7 @@ public class StackSortDriver {
                     System.out.println("2 - 📜 Input numbers with immediate sorting & output");
                     inputWithImmediateSortThenOutput();
                 }
-                case 0 -> {
-                    isContinue = false;
-                }
+                case 0 -> isContinue = false;
                 default -> System.out.println("Input not recognized");
             }
         }
@@ -115,7 +120,7 @@ public class StackSortDriver {
     }
 
     public static void main(String[] args) {
-        StackSortDriver stackSortDriver = new StackSortDriver();
-        stackSortDriver.startMenu();
+        StackSort stackSort = new StackSort();
+        stackSort.startMenu();
     }
 }
