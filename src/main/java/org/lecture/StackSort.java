@@ -93,10 +93,10 @@ public class StackSort {
         tempStack.init();
 
         for (int number : numbers) {
-            if (stack.empty() || number <= stack.top()) {
+            if (stack.empty() || number >= stack.top()) {
                 stack.push(number);
             } else {
-                while (!stack.empty() && number > stack.top()) {
+                while (!stack.empty() && number < stack.top()) {
                     tempStack.push(stack.pop());
                 }
                 stack.push(number);
@@ -106,12 +106,8 @@ public class StackSort {
             }
         }
 
-        while (!stack.empty()){
-            tempStack.push(stack.pop());
-        }
-
         System.out.println("Sorted Stack:");
-        tempStack.print();
+        stack.print();
     }
 
     private boolean isInteger(String toCheck) {
