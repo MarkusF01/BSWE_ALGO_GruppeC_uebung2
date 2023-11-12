@@ -67,7 +67,7 @@ public class StackSort {
         System.out.println("Bye!");
     }
 
-    private void inputThenSortAndOutput() {
+    public void inputThenSortAndOutput() {
         for (int number : numbers) {
             stack.push(number);
         }
@@ -88,7 +88,7 @@ public class StackSort {
     }
 
 
-    private void inputWithImmediateSortThenOutput() {
+    public void inputWithImmediateSortThenOutput() {
         MyStack tempStack = new MyStackImpl();
         tempStack.init();
 
@@ -114,7 +114,7 @@ public class StackSort {
         tempStack.print();
     }
 
-    private boolean isInteger(String toCheck) {
+    public boolean isInteger(String toCheck) {
         String regex = "^-?\\d+$";
         return toCheck.matches(regex);
     }
