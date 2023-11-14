@@ -77,7 +77,7 @@ public class StackSort {
 
         while (!stack.empty()) {
             int currentNumber = stack.pop();
-            while (!sortedStack.empty() && sortedStack.top() > currentNumber) {
+            while (!sortedStack.empty() && sortedStack.top() < currentNumber) {
                 stack.push(sortedStack.pop());
             }
             sortedStack.push(currentNumber);
@@ -93,10 +93,10 @@ public class StackSort {
         tempStack.init();
 
         for (int number : numbers) {
-            if (stack.empty() || number >= stack.top()) {
+            if (stack.empty() || number <= stack.top()) {
                 stack.push(number);
             } else {
-                while (!stack.empty() && number < stack.top()) {
+                while (!stack.empty() && number > stack.top()) {
                     tempStack.push(stack.pop());
                 }
                 stack.push(number);
